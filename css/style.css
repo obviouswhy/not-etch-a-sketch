@@ -11,6 +11,7 @@ body{
 }
 .bg-etch{
     background-image: url('/home/brew/Programming/The Odin Project/Other/sketch/assets/images/22ETCH-jumbo.png');
+    background-image: url('../assets/images/22ETCH-jumbo.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
