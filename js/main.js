@@ -32,6 +32,7 @@ function resetCells() {
 
 var mainColor = "black";
 var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+
 if (isSafari) {
     var chooseColor = document.querySelector(".colorPick"); /*This one is the button that will activte the input type color*/ 
     var colorDisplay = document.querySelector(".colorPick > i");
@@ -52,12 +53,6 @@ if (isSafari) {
         mainColor = document.querySelector("#colorPicker").value;
         colorDisplay.setAttribute("style","color:" + mainColor);
     });
-    
-    function updateColor(col) {
-        colorDisplay.setAttribute("style","color: " + col);
-        mainColor = col;
-        
-    }
     
     chooseColor.addEventListener('click', (e) =>colorPicker.click());
 }
