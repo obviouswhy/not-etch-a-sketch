@@ -11,10 +11,12 @@ var sqs = document.querySelectorAll(".square");
 sqs.forEach(sqr=>{
     sqr.addEventListener('click', (e) => {
         sqr.classList.toggle('painted');
+        //sqr.removeAttribute("style", "background-color:"+mainColor);
     });
     sqr.addEventListener('mouseover', (e) => {
         if (e.buttons == 1) {
             sqr.classList.add('painted');
+            //sqr.setAttribute("style", "background-color:"+mainColor);
         }
     });
 });
@@ -28,7 +30,7 @@ function resetCells() {
 
 var chooseColor = document.querySelector(".colorPick"); /*This one is the button that will activte the input type color*/ 
 var colorDisplay = document.querySelector(".colorPick > i");
-var colorPicker = document.querySelector("#colorPicker");; /*This one is the input type color*/ 
+var colorPicker = document.querySelector("#colorPicker"); /*This one is the input type color*/ 
 var mainColor = "black";
 colorPicker.addEventListener("input", (e) => {
     mainColor = document.querySelector("#colorPicker").value;
