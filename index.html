@@ -18,7 +18,7 @@
             <div class="buttons">
                 <button class="colorPick"><i class="fas fa-square"></i>  Choose Color</button>
                 <button class="reset-btn">Reset</button>
-                <input id="colorPickerSafari" class="jscolor {closable:true,closeText:'Close'}" onchange="updateColor(this.jscolor.toString())" style="display:none">
+                <input id="colorPickerSafari" class="jscolor {closable:true,closeText:'Close',onFineChange:'updateColor(this)'}" style="display:none">
                 <input type="color" name="color" id="colorPicker" style="display:none">
             </div>  
         </div>
