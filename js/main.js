@@ -7,9 +7,9 @@ for (var i = 1; i <= 256; i++){
 }
 var sqs = document.querySelectorAll(".square");
 sqs.forEach(sqr=>{
-    sqr.addEventListener('click', (e) => {
+    /*sqr.addEventListener('click', (e) => {
         sqr.classList.toggle('black');
-    });
+    });*/
     sqr.addEventListener('mouseover', (e) => {
         if (e.buttons == 1) {
             sqr.classList.add('black');
