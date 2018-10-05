@@ -16,9 +16,10 @@
             <div class="sketchContainer">
             </div>
             <div class="buttons">
-                <button class="colorPick jscolor{valueElement:'valueInput', styleElement:'styleInput'}"><i class="fas fa-square"></i>  Choose Color</button>
+                <button class="colorPick"><i class="fas fa-square"></i>  Choose Color</button>
                 <button class="reset-btn">Reset</button>
-                <input type="color" name="color" id="clorPicker">
+                <input id="colorPickerSafari" class="jscolor {closable:true,closeText:'Close'}" onchange="updateColor(this.jscolor.toString())" style="display:none">
+                <input type="color" name="color" id="colorPicker" style="display:none">
             </div>  
         </div>
     </div>

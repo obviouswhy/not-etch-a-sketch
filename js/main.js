@@ -1,3 +1,5 @@
+
+
 var container = document.querySelector(".sketchContainer");
 var div = document.createElement('div');
 div.classList.add('square');
@@ -28,13 +30,35 @@ function resetCells() {
     sqs.forEach(sqr => sqr.classList.remove('painted'));
 }
 
-var chooseColor = document.querySelector(".colorPick"); /*This one is the button that will activte the input type color*/ 
-var colorDisplay = document.querySelector(".colorPick > i");
-var colorPicker = document.querySelector("#colorPicker"); /*This one is the input type color*/ 
 var mainColor = "black";
-colorPicker.addEventListener("input", (e) => {
-    mainColor = document.querySelector("#colorPicker").value;
-    colorDisplay.setAttribute("style","color:" + mainColor);
-});
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+if (isSafari) {
+    var chooseColor = document.querySelector(".colorPick"); /*This one is the button that will activte the input type color*/ 
+    var colorDisplay = document.querySelector(".colorPick > i");
+    var colorPicker = document.querySelector("#colorPickerSafari"); /*This one is the input type color*/ 
+    
+    function updateColor(col) {
+        colorDisplay.setAttribute("style","color: #" + col);
+        mainColor = col;
+        
+    }
+    chooseColor.addEventListener('click', (e) =>colorPicker.jscolor.show());    
+}else{
+    var chooseColor = document.querySelector(".colorPick"); /*This one is the button that will activte the input type color*/ 
+    var colorDisplay = document.querySelector(".colorPick > i");
+    var colorPicker = document.querySelector("#colorPicker"); /*This one is the input type color*/ 
+    
+    colorPicker.addEventListener("input", (e) => {
+        mainColor = document.querySelector("#colorPicker").value;
+        colorDisplay.setAttribute("style","color:" + mainColor);
+    });
+    
+    function updateColor(col) {
+        colorDisplay.setAttribute("style","color: " + col);
+        mainColor = col;
+        
+    }
+    
+    chooseColor.addEventListener('click', (e) =>colorPicker.click());
+}
 
-chooseColor.addEventListener('click', (e) =>colorPicker.click());

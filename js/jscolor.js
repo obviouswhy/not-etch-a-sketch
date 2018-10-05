@@ -1445,6 +1445,7 @@ var jsc = {
 			var padCursor = 'crosshair';
 
 			// wrap
+			p.wrap.classList.add('picker');
 			p.wrap.style.clear = 'both';
 			p.wrap.style.width = (dims[0] + 2 * THIS.borderWidth) + 'px';
 			p.wrap.style.height = (dims[1] + 2 * THIS.borderWidth) + 'px';
