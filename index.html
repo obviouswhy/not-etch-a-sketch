@@ -12,14 +12,19 @@
 <body>
     <div class="wrapper">
         <h1 id="title">Etch-a-Sketch</h1>
+        <div class="gridSize">
+            <p>Select grid Size:</p>
+            <select class="gridSelector">
+                <option value="16x">16x16</option>
+                <option value="32x">32x32</option>
+                <option value="64x">64x64</option>
+            </select>
+        </div>
         <div class="main">
             <div class="sketchContainer">
             </div>
             <div class="buttons">
-                <!--<button class="colorPick"><i class="fas fa-square"></i>  Choose Color</button>
-                <button class="reset-btn">Reset</button>
-                <input id="colorPickerSafari" class="jscolor {closable:true,closeText:'Close',onFineChange:'updateColor(this),valueElement:'valueInput', styleElement:'styleInput'}" style="display:none">
-                <input type="color" name="color" id="colorPicker" style="display:none">-->
+                <!-- using jscolor because input type color is not supported by safari... -->
                 <button class="colorPick jscolor {valueElement:'valueInput', styleElement:'styleInput',closable:true, onFineChange:'updateColor(this)'}">
                 <i class="fas fa-square"></i>  Choose Color </button>
                 <button class="reset-btn">Reset</button>

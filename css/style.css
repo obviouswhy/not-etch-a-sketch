@@ -26,21 +26,36 @@ h1::before{
 }
 .sketchContainer{
     box-sizing: border-box;
-    margin: 10vh auto 4vh auto;    
+    margin: 3vh auto;    
     padding: 2px;
     border:1px solid;
     width: 60vh;
     height: 60vh;
     background: #ffffffb0;
+    cursor: pointer;
+}
+/*16*16*/ 
+.grid1{
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
     grid-gap: 2px;
-    cursor: pointer;
-  }
-  
+}  
+/*32*32*/
+.grid2{
+    display: grid;
+    grid-template-columns: repeat(32, 1fr);
+    grid-template-rows: repeat(32, 1fr);
+    grid-gap: 2px;
+}
+/*64*64*/  
+.grid3{
+    display: grid;
+    grid-template-columns: repeat(64, 1fr);
+    grid-template-rows: repeat(64, 1fr);
+    grid-gap: 2px;
+}
 .square{
-/*display:inline-block;*/
 border:.5px solid #867e7e7a;
 }
 .square:hover{
@@ -51,13 +66,11 @@ opacity:.5;
 .buttons{
     text-align: center;
 }
-
-/*.painted{
-background-color:black;
-}*/
-
-input[type="color"] {
-    display: none;
+.gridSize{
+    text-align: center;
+}
+.gridSize * {
+    display: inline-block;
 }
 /* Buttons form :
 getSkelleton.com/
