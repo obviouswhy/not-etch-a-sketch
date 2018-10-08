@@ -31,12 +31,18 @@ function resetCells() {
 }
 
 var mainColor = "black";
-var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
+var colorDisplay = document.querySelector(".colorPick > i");
+    function updateColor(col) {
+        colorDisplay.setAttribute("style","color: #" + col);
+        mainColor = '#'+col;
+        
+    }
+//var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
 
-if (isSafari) {
-    var chooseColor = document.querySelector(".colorPick"); /*This one is the button that will activte the input type color*/ 
+/*if (isSafari) {
+    var chooseColor = document.querySelector(".colorPick"); /*This one is the button that will activte the input type color 
     var colorDisplay = document.querySelector(".colorPick > i");
-    var colorPicker = document.querySelector("#colorPickerSafari"); /*This one is the input type color*/ 
+    var colorPicker = document.querySelector("#colorPickerSafari"); /*This one is the input type color
     
     function updateColor(col) {
         colorDisplay.setAttribute("style","color: #" + col);
@@ -45,9 +51,9 @@ if (isSafari) {
     }
     chooseColor.addEventListener('click', (e) =>colorPicker.jscolor.show());    
 }else{
-    var chooseColor = document.querySelector(".colorPick"); /*This one is the button that will activte the input type color*/ 
+    var chooseColor = document.querySelector(".colorPick"); /*This one is the button that will activte the input type color 
     var colorDisplay = document.querySelector(".colorPick > i");
-    var colorPicker = document.querySelector("#colorPicker"); /*This one is the input type color*/ 
+    var colorPicker = document.querySelector("#colorPicker"); /*This one is the input type color
     
     colorPicker.addEventListener("input", (e) => {
         mainColor = document.querySelector("#colorPicker").value;
@@ -55,5 +61,6 @@ if (isSafari) {
     });
     
     chooseColor.addEventListener('click', (e) =>colorPicker.click());
-}
+}*/
 
+    
